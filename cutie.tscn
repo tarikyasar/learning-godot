@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp63ucsu4hcb6"]
+
+[ext_resource type="Script" path="res://cutie.gd" id="1_0qcq6"]
+[ext_resource type="Texture2D" uid="uid://ugx8544fai46" path="res://img/cutie_variation_1.PNG" id="1_362on"]
+[ext_resource type="Texture2D" uid="uid://dsnmnoga0n5yr" path="res://img/cutie_variation_2.PNG" id="2_3nqoi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n5ekc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_362on")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3nqoi")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dbece"]
+radius = 40.0
+
+[node name="Cutie" type="RigidBody2D" groups=["cuties"]]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_0qcq6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_n5ekc")
+animation = &"fly"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_dbece")
+
+[connection signal="cutie_left_screen" from="." to="." method="_on_cutie_left_screen"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,6 +1,7 @@
 extends Area2D
 
-signal hit
+signal hit_mob
+signal hit_cutie
 
 @export var speed = 400 # How fast the player will move (pixels/sec)
 var screen_size
@@ -39,11 +40,13 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
 
-
 func _on_body_entered(body: Node2D) -> void:
-	hide() # Player disappears after being hit.
-	hit.emit()
-	$CollisionShape2D.set_deferred("disabled", true)
+	if body.is_in_group("mobs"):
+		hide() # Player disappears after being hit.
+		hit_mob.emit()
+		$CollisionShape2D.set_deferred("disabled", true)
+	if body.is_in_group("cuties"):
+		hit_cutie.emit()
 
 func start(pos):
 	position = pos

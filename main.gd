@@ -1,7 +1,9 @@
 extends Node
 
 @export var mob_scene: PackedScene
+@export var cutie_scene: PackedScene
 var score
+var cutie = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +18,7 @@ func game_over() -> void:
 	$DeathSound.play()
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	$CutieTimer.stop()
 	
 	$HUD.show_game_over()	
 	
@@ -29,8 +32,50 @@ func new_game():
 	$HUD.show_message("Get Ready")
 	
 	get_tree().call_group("mobs", "queue_free")
+	get_tree().call_group("cuties", "queue_free")
 
 func _on_mob_timer_timeout() -> void:
+	create_mob()
+
+func _on_score_timer_timeout() -> void:
+	score += 1
+	$HUD.update_score(score)
+
+func _on_start_timer_timeout() -> void:
+	$MobTimer.start()
+	$ScoreTimer.start()
+	$CutieTimer.start()
+
+func _on_cutie_timer_timeout() -> void:
+	if cutie == null:
+		create_cutie()
+	
+func on_hit_cutie() -> void:
+	score += 5
+	remove_child(cutie)
+	cutie = null
+	$HUD.update_score(score)
+	$CutieAcquiredSound.play()
+
+func create_cutie() -> void:
+	cutie = cutie_scene.instantiate()
+	
+	var cutie_spawn_location = $MobPath/MobSpawnLocation
+	cutie_spawn_location.progress_ratio = randf()
+	
+	var direction = cutie_spawn_location.rotation + PI/2
+	
+	cutie.position = cutie_spawn_location.position
+	
+	direction += randf_range(-PI / 4, PI / 4)
+	cutie.rotation = direction
+	
+	var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
+	cutie.linear_velocity = velocity.rotated(direction)
+
+	add_child(cutie)
+	
+func create_mob() -> void:
 	# Create a new instance of the Mob scene
 	var mob = mob_scene.instantiate()
 	
@@ -54,12 +99,3 @@ func _on_mob_timer_timeout() -> void:
 	
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
-
-
-func _on_score_timer_timeout() -> void:
-	score += 1
-	$HUD.update_score(score)
-
-func _on_start_timer_timeout() -> void:
-	$MobTimer.start()
-	$ScoreTimer.start()
