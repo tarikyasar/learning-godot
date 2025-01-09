@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ugx8544fai46"
-path="res://.godot/imported/cutie_variation_1.PNG-bfd2995053105fedb2e7d7cafa0fa505.ctex"
+uid="uid://bbdjocgr3r6rd"
+path="res://.godot/imported/enemyFlyingAlt_2.png-3a27160c23a1aa808790878a508902d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/cutie_variation_1.PNG"
-dest_files=["res://.godot/imported/cutie_variation_1.PNG-bfd2995053105fedb2e7d7cafa0fa505.ctex"]
+source_file="res://img/enemy/enemyFlyingAlt_2.png"
+dest_files=["res://.godot/imported/enemyFlyingAlt_2.png-3a27160c23a1aa808790878a508902d9.ctex"]
 
 [params]
 

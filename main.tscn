@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=4 uid="uid://dn4wra2vujgx0"]
 
-[ext_resource type="PackedScene" uid="uid://c7qg72u1npnvw" path="res://player.tscn" id="1_n1wkd"]
+[ext_resource type="PackedScene" uid="uid://c7qg72u1npnvw" path="res://nodes/player/player.tscn" id="1_n1wkd"]
 [ext_resource type="Script" path="res://main.gd" id="1_y6eru"]
-[ext_resource type="PackedScene" uid="uid://b81m1ddwrviwr" path="res://mob.tscn" id="2_ytseh"]
-[ext_resource type="PackedScene" uid="uid://cp63ucsu4hcb6" path="res://cutie.tscn" id="3_vkxxc"]
-[ext_resource type="PackedScene" uid="uid://cspvxyohlwg6g" path="res://hud.tscn" id="4_jui0e"]
+[ext_resource type="PackedScene" uid="uid://b81m1ddwrviwr" path="res://nodes/mob/mob.tscn" id="2_ytseh"]
+[ext_resource type="PackedScene" uid="uid://cp63ucsu4hcb6" path="res://nodes/cutie/cutie.tscn" id="3_vkxxc"]
+[ext_resource type="PackedScene" uid="uid://cspvxyohlwg6g" path="res://nodes/hud/hud.tscn" id="4_jui0e"]
 [ext_resource type="AudioStream" uid="uid://bsq4jbqwevc18" path="res://sound/gameover.wav" id="5_4asfh"]
 [ext_resource type="AudioStream" uid="uid://gv2vqalc2ynh" path="res://sound/wow-171498.mp3" id="7_qenjc"]
 

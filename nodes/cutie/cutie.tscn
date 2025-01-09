@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cp63ucsu4hcb6"]
 
-[ext_resource type="Script" path="res://cutie.gd" id="1_0qcq6"]
-[ext_resource type="Texture2D" uid="uid://ugx8544fai46" path="res://img/cutie_variation_1.PNG" id="1_362on"]
-[ext_resource type="Texture2D" uid="uid://dsnmnoga0n5yr" path="res://img/cutie_variation_2.PNG" id="2_3nqoi"]
+[ext_resource type="Script" path="res://nodes/cutie/cutie.gd" id="1_0qcq6"]
+[ext_resource type="Texture2D" uid="uid://ugx8544fai46" path="res://img/cutie/cutie_variation_1.PNG" id="1_362on"]
+[ext_resource type="Texture2D" uid="uid://dsnmnoga0n5yr" path="res://img/cutie/cutie_variation_2.PNG" id="2_3nqoi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5ekc"]
 animations = [{

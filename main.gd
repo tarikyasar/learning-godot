@@ -2,7 +2,8 @@ extends Node
 
 @export var mob_scene: PackedScene
 @export var cutie_scene: PackedScene
-var score
+var score = 0
+var highest_score = 0
 var cutie = null
 
 # Called when the node enters the scene tree for the first time.
@@ -20,7 +21,8 @@ func game_over() -> void:
 	$MobTimer.stop()
 	$CutieTimer.stop()
 	
-	$HUD.show_game_over()	
+	$HUD.show_game_over()
+	$HUD.update_highest_score(score)
 	
 func new_game():
 	$Music.play()

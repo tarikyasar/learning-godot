@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cspvxyohlwg6g"]
+[gd_scene load_steps=5 format=3 uid="uid://cspvxyohlwg6g"]
 
-[ext_resource type="Script" path="res://hud.gd" id="1_x01u6"]
+[ext_resource type="Script" path="res://nodes/hud/hud.gd" id="1_x01u6"]
 [ext_resource type="FontFile" uid="uid://bplg1u0ejms5r" path="res://fonts/Xolonium-Regular.ttf" id="2_elcc2"]
 
 [sub_resource type="Shortcut" id="Shortcut_74a8q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vaqm0"]
+font = ExtResource("2_elcc2")
+font_size = 48
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_x01u6")
@@ -27,9 +31,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -240.0
-offset_top = -120.0
+offset_top = -277.0
 offset_right = 240.0
-offset_bottom = 120.0
+offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_elcc2")
@@ -59,6 +63,20 @@ text = "Start"
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="HighestScore" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 360.0
+offset_bottom = -302.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Highest Score: "
+label_settings = SubResource("LabelSettings_vaqm0")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
