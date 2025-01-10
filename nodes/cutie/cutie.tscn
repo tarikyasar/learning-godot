@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://cp63ucsu4hcb6"]
 
 [ext_resource type="Script" path="res://nodes/cutie/cutie.gd" id="1_0qcq6"]
-[ext_resource type="Texture2D" uid="uid://ugx8544fai46" path="res://img/cutie/cutie_variation_1.PNG" id="1_362on"]
-[ext_resource type="Texture2D" uid="uid://dsnmnoga0n5yr" path="res://img/cutie/cutie_variation_2.PNG" id="2_3nqoi"]
+[ext_resource type="Texture2D" uid="uid://b6r4bx0g2seq0" path="res://img/cutie/cutie_var_1.PNG" id="2_eikwd"]
+[ext_resource type="Texture2D" uid="uid://52py2n5yiks3" path="res://img/cutie/cutie_var_2.PNG" id="3_1d2hg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5ekc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_362on")
+"texture": ExtResource("2_eikwd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_3nqoi")
+"texture": ExtResource("3_1d2hg")
 }],
 "loop": true,
 "name": &"fly",
@@ -27,7 +27,7 @@ gravity_scale = 0.0
 script = ExtResource("1_0qcq6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_n5ekc")
 animation = &"fly"
 

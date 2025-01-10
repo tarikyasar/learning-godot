@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ugx8544fai46"
-path="res://.godot/imported/cutie_variation_1.PNG-74c51b45121de81c33401f40345ac413.ctex"
+uid="uid://b6r4bx0g2seq0"
+path="res://.godot/imported/cutie_var_1.PNG-93a29e2f7e4b3897baa2f4db717562db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/cutie/cutie_variation_1.PNG"
-dest_files=["res://.godot/imported/cutie_variation_1.PNG-74c51b45121de81c33401f40345ac413.ctex"]
+source_file="res://img/cutie/cutie_var_1.PNG"
+dest_files=["res://.godot/imported/cutie_var_1.PNG-93a29e2f7e4b3897baa2f4db717562db.ctex"]
 
 [params]
 
